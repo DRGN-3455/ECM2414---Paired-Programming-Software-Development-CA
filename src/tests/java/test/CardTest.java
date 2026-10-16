@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CardTest {
 
     @org.junit.jupiter.api.Test
-    public void testGtetValue() {
+    public void testGetValue() {
         Card getCard = new Card(2);
         assertEquals(2, getCard.getValue());
     }
