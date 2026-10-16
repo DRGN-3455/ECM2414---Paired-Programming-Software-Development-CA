@@ -1,7 +1,7 @@
 # CardGame Class
     - Main
 
-# Card Class
+# cardgame.Card Class
 # Player Class
 # Deck Class
 # RoundRobin Class
