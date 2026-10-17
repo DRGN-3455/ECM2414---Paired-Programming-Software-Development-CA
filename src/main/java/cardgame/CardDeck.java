@@ -6,15 +6,22 @@ public class CardDeck {
     private final int deckId;
     private static int  numberOfDecks = 0;
     public CardDeck() {
-        this.deckId = numberOfDecks++;
+        this.deckId = ++numberOfDecks;
     }
 
     public synchronized void addCard(Card addedCard){ //Thread-safe
-        for (int x=0; x <= 4 ; x++){ //goes through each slot in a deck
-            if (deckFIFO[x] == null){ //if it is the topmost empty slot it is inserted
-                this.deckFIFO[x] = addedCard; // card added to bottom of deck
-                break; //break as no more iterations are necessary
+        if (this.deckFIFO[3] == null){
+            for (int i=0; i<=3; i++){
+                if(this.deckFIFO[i] == null){
+                    this.deckFIFO[i] = addedCard;
+                    break;
                 }
+
+            }
+        }
+
+        else{
+            throw new IllegalStateException("deck is full, cannot add another card");
         }
     }
 
@@ -36,21 +43,23 @@ public class CardDeck {
         return this.deckFIFO;
     }
 
-    public synchronized int[] getCardIds() {
-
+    public synchronized int[] getCardValues() {
+        Card[] deck = this.getDeckFIFO();
         int[] values = new int[4];
-        for (int x = 0; x <= 4; x++) {
-            values[x] = deckFIFO[x].getValue();
+
+        for (int x = 0; x <= 3; x++) {
+            if (deck[x] != null) {
+                values[x] = deck[x].getValue();
+            }
         }
         return values;
     }
 
 
     public synchronized int getSize(){ //data publication warning
-
         int cardCount = 0; //number of cards present within deck
 
-        for (int x=0; x <= 4 ; x++){ //counting each card
+        for (int x=0; x <= 3 ; x++){ //counting each card
             if (deckFIFO[x] != null){
                 cardCount++; //card found, count incremented
             }
@@ -67,13 +76,13 @@ public class CardDeck {
         return this.deckId;
     }
 
-    public synchronized void resetDeck() { //resets deck count
+    public static synchronized void resetDeck() { //resets deck count
         numberOfDecks = 0;
     }
 
     public synchronized void writeOutput(){
         int deckId = this.getDeckId();
-        int[] cardIds = this.getCardIds();
+        int[] cardIds = this.getCardValues();
         String message;
 
         message = cardIds[0] + " " + cardIds[1] + " " + cardIds[2] + " " + cardIds[3];
