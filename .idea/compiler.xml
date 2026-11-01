@@ -6,6 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for Paired Programming Software Development CA [CardGame]" enabled="true">
+        <sourceOutputDir name="../../../../Github local/Term-1/ECM2414 - Software Development/Software Development Paired Programming CA/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../Github local/Term-1/ECM2414 - Software Development/Software Development Paired Programming CA/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="SWD-CA" />
       </profile>
     </annotationProcessing>

@@ -1,2 +1,5 @@
-cardgame/Card.class
+cardgame/Player.class
 cardgame/CardDeck.class
+cardgame/CardGame.class
+cardgame/packGenerator.class
+cardgame/Card.class

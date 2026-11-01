@@ -85,7 +85,7 @@ public class Player implements Runnable {
         out.println("Player " + id + " final hand: " + handString());
       } else {
         int winningPlayerId = winnerId.get();
-        out.println("Player " + winningPlayerId + " has informed Player " + id + " that" + winningPlayerId
+        out.println("Player " + winningPlayerId + " has informed Player " + id + " that Player " + winningPlayerId
             + " has won the game.");
         out.println("Player " + id + " exiting the game.");
         out.println("Player " + id + " hand: " + handString());

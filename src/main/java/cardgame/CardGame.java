@@ -153,6 +153,7 @@ public class CardGame {
       winnerThread.start();
       try {
         winnerThread.join();
+        System.out.println("Player " + winner.getId() + " won!");
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
       }
