@@ -2,7 +2,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>CWD-CA-SRC</groupId>
+    <groupId>SWD-CA-SRC</groupId>
     <artifactId>SWD-CA</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Paired Programming Software Development CA [CardGame]</name>

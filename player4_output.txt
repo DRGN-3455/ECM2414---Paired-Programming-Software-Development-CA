@@ -1,0 +1,4 @@
+Player 4 initial hand: 1 2 3 4
+Player 2 has informed Player 4 that Player 2 has won the game.
+Player 4 exiting the game.
+Player 4 hand: 1 2 3 4

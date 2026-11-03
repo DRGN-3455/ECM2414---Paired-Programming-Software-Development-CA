@@ -1,0 +1,4 @@
+Player 2 initial hand: 2 2 2 2
+Player 2 has won the game!
+Player 2 exiting the game.
+Player 2 final hand: 2 2 2 2

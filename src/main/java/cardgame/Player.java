@@ -121,12 +121,24 @@ public class Player implements Runnable {
   }
 
   private synchronized Card chooseCardToDiscard() {
-    for (Card card : hand) {
-      if (card.getValue() != id) {
-        return card;
+    int maxIndexOfHand = hand.size() - 1;
+    while (true) {
+      int candidateIndex = (int) (Math.random() * maxIndexOfHand);
+      if (hand.get(candidateIndex).getValue() != getId()) {
+        return hand.get(candidateIndex);
+      }
+      else if (hasWinningHand()) {
+        return hand.get(0); // If all cards are the same, discard the first one
       }
     }
-    return hand.get(0); // If all cards are the same, discard the first one
+
+//    for (Card card : hand) {
+//      if (card.getValue() != id) {
+//        return card;
+//
+//      }
+//    }
+//    return hand.get(0); // If all cards are the same, discard the first one
   }
 
   private synchronized void removeFromHand(Card card) {
